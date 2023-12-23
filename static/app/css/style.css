@@ -55,7 +55,7 @@ Navigation bar
     padding: 84px;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #717f86;
+    color: #007FFF;
     font-size: 14px;
     font-weight: 700;
 }
@@ -76,13 +76,13 @@ Navigation bar
 }
 
 .btn-trial a{
-	background-color: #5FCF80;
+	background-color: #007FFF;
 	border-radius: 25px;
 	color: #ffffff !important;
-	border: 1px solid #5FCF80;
+	border: 1px solid #007FFF;
 }
 .btn-trial a:hover, .btn-trial a:focus{
-	border: 1px solid #5FCF80;
+	border: 1px solid #007FFF;
 	background-color: #fff;
 	color: #007FFF !important;
 }

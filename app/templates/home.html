@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Excel</title>
+  <title>ExcelMaths</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="stylesheet" type="text/css" href="{% static 'app/https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans' %}">
@@ -101,15 +101,11 @@
         <div class="row">
           <div class="banner-text text-center">
             <div class="text-border">
-              <h2 class="text-dec">Unlocking Potential</h2>
+              <h2 class="text-dec">Tailored Maths Tutoring</h2>
             </div>
             <div class="intro-para text-center quote">
-              <p class="big-text">One equation at a time.</p>
-              <p class="big-text">Start your path to mastery</p>
+              <p class="big-text">Whether your child is just starting their maths journey or needs targeted support, we customize our tuition to meet their specific needs and help them build a strong foundation.</p>
             </div>
-            <a href="#feature" class="mouse-hover">
-              <div class="mouse"></div>
-            </a>
           </div>
         </div>
       </div>
@@ -182,18 +178,7 @@
       <div class="row">
         <div class="header-section text-center">
           <h2 class="white">See What Our Customer Are Saying</h2>
-
-          <form action="{% url 'quote' %}" class="form-inline my-2 my-lg-0" method="POST">
-            {% csrf_token %}
-            <p>Your name</p>
-            <input type="text" name="name">
-            <p>Your Quote</p>
-            <input type="text" name="quote">
-            <button type="submit">Add Quote</button>
-          </form>
-
           <p class="white"></p>
-          <hr class="bottom-line bg-white">
         </div>
 
           {% for quote in quotes %}
@@ -214,7 +199,35 @@
           {% endfor %}
 
         </div>
+          <hr class="bottom-line bg-white">
+
+        <div class="header-section text-center">
+          <h2 class="white">Let us know what you think</h2>
+          <p class="white"></p>
+        </div>
+
+          <form action="{% url 'quote' %}" class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+            <table>
+              <tr>
+                <td>
+                  <p>Your name</p>
+                  <input type="text" name="name">
+                </td>
+                <td style="min-width:50px">
+                </td>
+                <td>
+                  <p>Your Quote</p>
+                  <input type="text" name="quote" style="min-width:500px">
+                </td>
+              </tr>
+            </table>
+            <p></p>
+            <button type="submit" class="form contact-form-button light-form-button oswald light">SEND FEEDBACK</button>
+          </form>
+
       </div>
+
     </div>
   </section>
   <!--/ Testimonial-->
@@ -224,6 +237,9 @@
       <div class="row">
         <div class="header-section text-center">
           <h2>Request free booking</h2>
+
+          <p>We know that tuition is a very personal experience. You want to be sure that there is a good rapport between the student and their tutor. That’s why we provide an initial free one-hour session so that you can be confident that we are a good match and will provide an excellent learning experience to you or your child.</p>
+
           <p>Please let us know what times are convenient to you.</p><p> Although the initial free sessions are in high demand we do endevour to meet each and every student as soon as availability permits.</p>
           <hr class="bottom-line">
         </div>
