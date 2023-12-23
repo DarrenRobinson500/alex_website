@@ -119,49 +119,6 @@
 
 
   <!--/ Banner-->
-
-  <!--Testimonial-->
-  <section id="testimonial" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="header-section text-center">
-          <h2 class="white">See What Our Customer Are Saying?</h2>
-
-          <form action="{% url 'quote' %}" class="form-inline my-2 my-lg-0" method="POST">
-            {% csrf_token %}
-            <p>Your name</p>
-            <input type="text" name="name">
-            <p>Your Quote</p>
-            <input type="text" name="quote">
-            <button type="submit">Add Quote</button>
-          </form>
-
-          <p class="white"></p>
-          <hr class="bottom-line bg-white">
-        </div>
-
-          {% for quote in quotes %}
-
-          {% if quote.odd %} <div class="col-md-6 col-sm-6">
-
-          {% else %}
-            <div class="col-md-6 col-sm-6">
-          {% endif %}
-              <div class="text-comment">
-                <p class="text-par">"{{ quote.quote }}"</p>
-                <p class="text-name">{{ quote.name }}  {{ quote.date }}</p>
-              </div>
-              <p></p>
-            </div>
-          <p></p>
-
-          {% endfor %}
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Testimonial-->
   <!--Pricing-->
   <section id="pricing" class="section-padding">
     <div class="container">
@@ -218,6 +175,49 @@
     </div>
   </section>
   <!--/ Pricing-->
+
+  <!--Testimonial-->
+  <section id="testimonial" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2 class="white">See What Our Customer Are Saying</h2>
+
+          <form action="{% url 'quote' %}" class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+            <p>Your name</p>
+            <input type="text" name="name">
+            <p>Your Quote</p>
+            <input type="text" name="quote">
+            <button type="submit">Add Quote</button>
+          </form>
+
+          <p class="white"></p>
+          <hr class="bottom-line bg-white">
+        </div>
+
+          {% for quote in quotes %}
+
+          {% if quote.odd %} <div class="col-md-6 col-sm-6">
+
+          {% else %}
+            <div class="col-md-6 col-sm-6">
+          {% endif %}
+              <div class="text-comment">
+                <p class="text-par">"{{ quote.quote }}"</p>
+                <p class="text-name">{{ quote.name }}  {{ quote.date }}</p>
+              </div>
+              <p></p>
+            </div>
+          <p></p>
+
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Testimonial-->
   <!--Contact-->
   <section id="contact" class="section-padding">
     <div class="container">

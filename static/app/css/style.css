@@ -84,7 +84,7 @@ Navigation bar
 .btn-trial a:hover, .btn-trial a:focus{
 	border: 1px solid #5FCF80;
 	background-color: #fff;
-	color: #5FCF80 !important;
+	color: #007FFF !important;
 }
 .navbar-default .navbar-brand {
     font-family: 'Dosis', sans-serif !important;
@@ -128,7 +128,7 @@ Banner
     color: #fff;
 }
 .text-border{
-	border: 5px solid #5FCF80;
+	border: 5px solid #007FFF;
 	display: inline-block;
 	margin-top: 150px;
 }
@@ -455,7 +455,7 @@ Price Table
 }
 .price-table .pricing-head h4 {
     font-size: 22px;
-    color: #232c3b;
+    color: #007FFF;
     margin-top: 0px;
     letter-spacing: 1px;
     border-bottom: 1px solid #232c3b;
