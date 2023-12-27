@@ -2,14 +2,26 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.core.mail import send_mail
+import os
 
 from twilio.rest import Client
 
-account_sid = 'ACa0c8a968a5cf31589723fc546a495ca0'
-auth_token = '7c2f462ef25881f44a9acecaf8143a80'
-my_twilio_number = '19282884569'
-daz = '+61493461541'
-alex = '+61491062546'
+def read_file(text):
+    file = open("SECRET_KEYS.txt")
+    data = file.readlines()
+    file.close()
+    for line in data:
+        parts = line.strip().split(" ")
+        if parts[0] == text:
+            return parts[1]
+
+account_sid = read_file("account_sid")
+auth_token = read_file("auth_token")
+my_twilio_number = read_file("my_twilio_number")
+target_number = read_file("target_number")
+
+
+
 
 client = Client(account_sid, auth_token)
 
@@ -37,7 +49,7 @@ def booking(request):
         booking_message = request.POST['message']
 
         body = f"'{booking_name}' has requested a booking",
-        for to in [daz, alex]:
+        for to in [target_number, ]:
             client.messages.create(body=body, from_=my_twilio_number, to=to)
 
     return redirect("home")
