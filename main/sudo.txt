@@ -1,0 +1,11 @@
+To pull
+cd alex_website
+git pull
+
+To restart
+sudo systemctl restart nginx
+sudo service gunicorn restart
+sudo service nginx restart
+
+To view error logs
+sudo tail -f /var/log/nginx/error.log

@@ -1,5 +1,17 @@
 from django.db.models import *
 
+from embed_video.fields import EmbedVideoField
+
+class Video(Model):
+    video = EmbedVideoField()  # same like models.URLField()
+    name = TextField(null=True, blank=True)
+    category = TextField(null=True, blank=True)
+
+    def __str__(self):
+        if self.name:
+            return self.name
+        return "No name"
+
 class Quote(Model):
     quote = TextField(null=True, blank=True)
     stars = IntegerField(null=True, blank=True)

@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-{% static 'app/https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans'%}
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,12 +31,12 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand">Excel<span>Maths</span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-default"><a href="{% url 'videos' %}">Videos</a></li>
           <li class="btn-trial"><a href="#footer">Book</a></li>
         </ul>
       </div>
@@ -70,7 +70,7 @@
                   <!----- password -------------->
                   <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
                   <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
-                  <!---Alredy exists  ! -->
+                  <!---Already exists  ! -->
                   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
@@ -145,6 +145,7 @@
             <div class="pricing-head">
               <h4>One hour online</h4>
               <span class="fa fa-usd curency"></span> <span class="amount">40</span>
+
             </div>
 
             <!-- Plan Detail -->
@@ -159,6 +160,7 @@
             <div class="pricing-head">
               <h4>One hour in person</h4>
               <span class="fa fa-usd curency"></span> <span class="amount">60</span>
+              <p>(availability depends upon location)</p>
             </div>
 
             <!-- Plan Detail -->
@@ -177,7 +179,7 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2 class="white">See What Our Customer Are Saying</h2>
+          <h2 class="white">What Our Customer Are Saying</h2>
           <p class="white"></p>
         </div>
 
@@ -240,7 +242,7 @@
 
           <p>We know that tuition is a very personal experience. You want to be sure that there is a good rapport between the student and their tutor. That’s why we provide an initial free one-hour session so that you can be confident that we are a good match and will provide an excellent learning experience to you or your child.</p>
 
-          <p>Please let us know what times are convenient to you.</p><p> Although the initial free sessions are in high demand we do endevour to meet each and every student as soon as availability permits.</p>
+          <p>Please let us know the times are convenient for you.</p><p> Although the initial free sessions are in high demand we do endevour to meet each and every student as soon as availability permits.</p>
           <hr class="bottom-line">
         </div>
         <div id="sendmessage">Your message has been sent. Thank you!</div>

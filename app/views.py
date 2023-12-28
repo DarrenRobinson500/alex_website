@@ -15,6 +15,7 @@ def read_file(text):
         if parts[0] == text:
             return parts[1]
 
+
 account_sid = read_file("account_sid")
 auth_token = read_file("auth_token")
 my_twilio_number = read_file("my_twilio_number")
@@ -27,10 +28,14 @@ client = Client(account_sid, auth_token)
 
 
 def home(request):
-
-    quotes = Quote.objects.all
+    quotes = Quote.objects.order_by('-date')
     context = {'quotes': quotes}
     return render(request, 'home.html', context)
+
+def videos(request):
+    videos = Video.objects.all()
+    context = {'videos': videos}
+    return render(request, 'videos.html', context)
 
 def quote(request):
     if request.method == 'POST':

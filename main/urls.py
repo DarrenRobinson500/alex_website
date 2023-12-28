@@ -10,6 +10,8 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('admin', admin.site.urls),
     path('', home, name='home'),
+    path('home', home, name='home'),
+    path('videos', videos, name='videos'),
     path('booking', booking, name='booking'),
     path('quote', quote, name='quote'),
 ]
