@@ -1,4 +1,5 @@
 {% load static %}
+{% load embed_video_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +30,6 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand">Excel<span>Maths</span></a>
-        <ul class="nav navbar-nav navbar-left">
-          <li class="btn-trial"><a href="{% url 'videos' %}">Videos</a></li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -98,8 +96,8 @@
             <!-- Plan  -->
             <div class="pricing-head">
               <h4>One hour in person</h4>
-              <span class="fa fa-usd curency"></span> <span class="amount">60</span>
-              <p>(availability depends upon location)</p>
+              <span class="fa fa-usd curency"></span> <span class="amount">60</span><br>
+              <span>(availability depends upon location)</span>
             </div>
 
             <!-- Plan Detail -->
@@ -220,6 +218,17 @@
     </div>
   </section>
   <!--/ Contact-->
+
+  <div class="header-section text-center">
+    <h2>Our Videos</h2>
+    <p></p>
+    <hr class="bottom-line">
+  </div>
+  {% for video in videos %}
+  {% video video.video %}
+  {% endfor %}
+
+
   <!--Footer-->
   <footer id="footer" class="footer">
     <div class="container text-center">

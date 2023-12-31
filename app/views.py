@@ -29,7 +29,8 @@ client = Client(account_sid, auth_token)
 
 def home(request):
     quotes = Quote.objects.order_by('-date')
-    context = {'quotes': quotes}
+    videos = Video.objects.all()
+    context = {'quotes': quotes, 'videos': videos, }
     return render(request, 'home.html', context)
 
 def videos(request):
