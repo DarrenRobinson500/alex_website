@@ -37,10 +37,10 @@ h1, h2, h3, h4, h5, h6{
     color: #4B4B4C;
 }
 a{
-    color: #5fcf80;
+    color: #007FFF;
 }
 a:hover, a:focus{
-    color: #5fcf80;
+    color: #007FFF;
 }
 /***********************************
 Navigation bar
@@ -138,7 +138,7 @@ Banner
 	color: #fff;
 	margin-top: 30px;
 }
-.quote{
+.quote .btn{
     background-color:
 }
 .modal-dialog {
@@ -219,17 +219,17 @@ Banner
 .small-text{
     font-size: 16px;
 }
-.quote{
-    background-color: #5fcf80;
+.quote .btn{
+    background-color: #007FFF;
     color: #fff;
     -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   margin-top: 10px;
 }
-.quote:hover, .quote:focus{
+.quote .btn:hover, .quote .btn:focus{
     background-color: #fff;
-    color: #5fcf80;
+    color: #007FFF;
     border-color: #fff;
      -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -345,7 +345,7 @@ Cta
     min-width: 280px;
     margin-left: -4px;
     margin-bottom: 2px;
-    border: 1px solid #5fcf80;
+    border: 1px solid #007FFF;
     background-color: rgb(247, 247, 247);
     border-radius: 30px 0px 0px 30px;
 }
@@ -353,7 +353,7 @@ Cta
     font-size: 18px;
     text-transform: capitalize;
     color: #fff;
-    background-color: #5fcf80;
+    background-color: #007FFF;
     border: 2px solid #fff;
     padding: 14px 30px;
     margin-left: -4px;
@@ -455,7 +455,7 @@ Price Table
 }
 .price-table .pricing-head h4 {
     font-size: 22px;
-    color: #007FFF;
+    color: ##232c3b;
     margin-top: 0px;
     letter-spacing: 1px;
     border-bottom: 1px solid #232c3b;
@@ -482,7 +482,7 @@ Price Table
     padding: 20px 0px;
     font-weight: bold !important;
     font-size: 14px;
-    background-color: #5fcf80;
+    background-color: #007FFF;
 }
 /***********************************
 Contact Us
@@ -600,14 +600,14 @@ Footer
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .btn-submit:hover, .btn-submit:focus{
-    background-color: #5fcf80;
+    background-color: #007FFF;
     color: #fff;
 }
 .btn-submit{
 	padding: 14px 12px;
 	border-radius: 50px;
 	text-transform: uppercase;
-    background-color: #5fcf80;
+    background-color: #007FFF;
     color: #fff;
 }
 .btn-submit i{
@@ -651,9 +651,11 @@ Footer
     padding: 0px 10px 0px 0px;
     margin-bottom: 10px;
 }
-
+.btn {
+    padding: 10px 20px;
+}
 .light-form-button{
-    background: #5fcf80;
+    background: #007FFF;
     border: 1px solid rgba(119, 81, 81, 0.34);
     width: 24%;
     padding: 10px 10px;
@@ -667,7 +669,7 @@ Footer
   transition: all 0.3s ease-in-out;
 }
 .btn-green, .btn-green:hover{
-    background-color: #5fcf80;
+    background-color: #007FFF;
     color: #fff;
 }
 .footer .form-control:focus{
