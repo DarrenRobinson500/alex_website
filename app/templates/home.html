@@ -156,7 +156,7 @@
                 <td style="min-width:50px">
                 </td>
                 <td>
-                  <p>Your Quote</p>
+                  <p>Your Feedback</p>
                   <input type="text" name="quote" style="min-width:500px">
                 </td>
               </tr>
@@ -219,6 +219,7 @@
   </section>
   <!--/ Contact-->
 
+  {% if videos %}
   <div class="header-section text-center">
     <h2>Our Videos</h2>
     <p></p>
@@ -227,6 +228,7 @@
   {% for video in videos %}
   {% video video.video %}
   {% endfor %}
+  {% endif %}
 
 
   <!--Footer-->
