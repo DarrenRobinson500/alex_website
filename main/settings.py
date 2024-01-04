@@ -28,7 +28,7 @@ SECRET_KEY = read_file("secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.excel-maths.com', 'excel-maths.com', 'local_host', '127.0.0.1']
+ALLOWED_HOSTS = ['www.excel-maths.com', 'excel-maths.com', 'local_host', '3.106.227.162', '127.0.0.1']
 
 
 # Application definition
