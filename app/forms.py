@@ -9,5 +9,5 @@ class QuoteForm(ModelForm):
 class BookingForm(ModelForm):
     class Meta:
         model = Booking
-        fields= ['name', 'subject', 'email', 'message', ]
+        fields= ['name', 'email', 'message', ]
 

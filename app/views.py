@@ -3,6 +3,7 @@ from .models import *
 from .forms import *
 from django.core.mail import send_mail
 import os
+from django.contrib import messages
 
 from twilio.rest import Client
 
@@ -48,15 +49,21 @@ def quote(request):
 def booking(request):
     if request.method == "POST":
         form = BookingForm(request.POST or None)
-        if form.is_valid(): form.save()
-        booking_name = request.POST['name']
-        booking_email = request.POST['email']
-        booking_subject = request.POST['subject']
-        booking_message = request.POST['message']
+        if form.is_valid():
+            form.save()
+            booking_name = request.POST['name']
+            booking_email = request.POST['email']
+            booking_message = request.POST['message']
 
-        body = f"'{booking_name}' has requested a booking",
-        for to in [target_number, ]:
-            client.messages.create(body=body, from_=my_twilio_number, to=to)
+            body = f"'{booking_name}' has requested a booking. Email: {booking_email}. Message: {booking_message}",
+            for to in [target_number, ]:
+                client.messages.create(body=body, from_=my_twilio_number, to=to)
+        else:
+            messages.error(request, form.errors)
+            quotes = Quote.objects.order_by('-date')
+            videos = Video.objects.all()
+            context = {'quotes': quotes, 'videos': videos, 'form': form,}
+            return render(request, 'home.html', context)
 
     return redirect("home")
 

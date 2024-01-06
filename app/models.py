@@ -25,11 +25,10 @@ class Quote(Model):
         return self.id % 2 != 0
 
 class Booking(Model):
-    name = CharField(max_length=255)
-    email = EmailField(null=True, blank=True)
-    subject = TextField(null=True, blank=True)
-    message = TextField(null=True, blank=True)
+    name = CharField(max_length=255, error_messages='Please provide a name')
+    email = EmailField(error_messages='Please provide an email')
+    message = TextField(max_length=2000, error_messages='Please provide a message')
     date = DateField(auto_now=True, null=True)
 
     def __str__(self):
-        return self.subject
+        return self.name

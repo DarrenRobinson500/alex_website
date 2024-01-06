@@ -72,7 +72,7 @@
 
             <!-- Plan Detail -->
             <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg green btn-block"></a>
+              <a href="#contact" class="btn btn-bg green btn-block">Book Now</a>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
 
             <!-- Plan Detail -->
             <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg green btn-block"></a>
+              <a href="#contact" class="btn btn-bg green btn-block">Book Now</a>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@
 
             <!-- Plan Detail -->
             <div class="price-in mart-15">
-              <a href="#" class="btn btn-bg red btn-block"></a>
+              <a href="#contact" class="btn btn-bg green btn-block">Book Now</a>
             </div>
           </div>
         </div>
@@ -147,20 +147,14 @@
 
           <form action="{% url 'quote' %}" class="form-inline my-2 my-lg-0" method="POST">
             {% csrf_token %}
-            <table>
-              <tr>
-                <td>
                   <p>Your name</p>
-                  <input type="text" name="name">
-                </td>
-                <td style="min-width:50px">
-                </td>
-                <td>
+                  <input type="text" name="name" placeholder="Your name" class="form-control" >
                   <p>Your Feedback</p>
-                  <input type="text" name="quote" style="min-width:500px">
-                </td>
-              </tr>
-            </table>
+
+                  <textarea class="form-control" name="quote" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Your feedback"></textarea>
+
+
+
             <p></p>
             <button type="submit" class="form contact-form-button light-form-button oswald light">SEND FEEDBACK</button>
           </form>
@@ -182,6 +176,24 @@
           <p>Please let us know the times are convenient for you.</p><p> Although the initial free sessions are in high demand we do endevour to meet each and every student as soon as availability permits.</p>
           <hr class="bottom-line">
         </div>
+    {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                {% if field.name == "email" %}
+                  Please provide an {{ field.name }}.
+                {% else %}
+                  Please provide a {{ field.name }}.
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
         <div id="sendmessage">Your message has been sent. Thank you!</div>
         <div id="errormessage"></div>
         <form action="{% url 'booking' %}" method="post" role="form" class="contactForm">
@@ -193,10 +205,6 @@
             </div>
             <div class="form-group">
               <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validation"></div>
             </div>
           </div>
@@ -229,6 +237,9 @@
   {% video video.video %}
   {% endfor %}
   {% endif %}
+
+
+
 
 
   <!--Footer-->
